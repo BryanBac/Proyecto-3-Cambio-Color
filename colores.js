@@ -1,4 +1,4 @@
-const colores = {
+const listado_colores = {
   0: "AliceBlue",
   1: "AntiqueWhite",
   2: "Aqua",
@@ -158,21 +158,3 @@ const colores = {
   142: "Yellow",
   143: "YellowGreen",
 };
-
-function getRandomInt() {
-  return Math.floor(Math.random() * 143);
-}
-
-let color = 0;
-function cambiar_color() {
-  var valores = Object.values(colores);
-  aleatorio = getRandomInt();
-  console.log(aleatorio + ": " + valores[aleatorio]);
-  document.getElementById("cuerpo").style.backgroundColor = valores[aleatorio];
-  document.getElementById("texto-color").innerHTML = valores[aleatorio];
-  if (aleatorio == 139) {
-    document.getElementById("texto-color").style.color = "black";
-  } else {
-    document.getElementById("texto-color").style.color = valores[aleatorio];
-  }
-}
