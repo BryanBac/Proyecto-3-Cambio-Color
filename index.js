@@ -1,22 +1,29 @@
+const colores = {
+  0: "white",
+  1: "blue",
+  2: "blueviolet",
+  3: "red",
+  4: "black",
+};
+
+function getRandomInt() {
+  return Math.floor(Math.random() * 5);
+}
+
 let color = 0;
 function cambiar_color() {
-  console.log("primero:" + color);
-  // Esto no es aleatorio, pero quería probar a ver si podía cambiarle el fondo xd
-  if (color == 0) {
-    document.getElementById("cuerpo").style.backgroundColor = "blueviolet";
-    document.getElementById("texto-color").innerHTML = "blueviolet";
-    document.getElementById("texto-color").style.color = "white";
-    color = color + 1;
-  } else if (color == 1) {
-    document.getElementById("cuerpo").style.backgroundColor = "red";
-    document.getElementById("texto-color").innerHTML = "red";
-    document.getElementById("texto-color").style.color = "white";
-    color = color + 1;
-  } else if (color == 2) {
-    document.getElementById("cuerpo").style.backgroundColor = "white";
-    document.getElementById("texto-color").innerHTML = "white";
-    document.getElementById("texto-color").style.color = "black";
-    color = 0;
+  var valores = Object.values(colores);
+  aleatorio = getRandomInt();
+  console.log(aleatorio + ": " + valores[aleatorio]);
+  document.getElementById("cuerpo").style.backgroundColor = valores[aleatorio];
+  document.getElementById("texto-color").innerHTML = valores[aleatorio];
+  if (aleatorio == 4) {
+    aleatorio = 0;
+    document.getElementById("texto-color").style.color = valores[aleatorio];
+  } else if (aleatorio == 0) {
+    aleatorio = 4;
+    document.getElementById("texto-color").style.color = valores[aleatorio];
+  } else {
+    document.getElementById("texto-color").style.color = valores[aleatorio + 1];
   }
-  console.log("segundo:" + color);
 }
