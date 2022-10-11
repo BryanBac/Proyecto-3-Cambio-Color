@@ -1,3 +1,3 @@
 # Proyecto-3-Cambio-Color
  
-- Aplicación Web que cambia de color de manera aleatoria al pulsar un botón.
+- Aplicación Web que cambia el color del Background de manera aleatoria al pulsar un botón.
